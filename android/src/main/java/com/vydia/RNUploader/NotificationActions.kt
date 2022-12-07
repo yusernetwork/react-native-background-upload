@@ -19,7 +19,7 @@ class NotificationActions {
     val intent = Intent(INTENT_ACTION)
     intent.putExtra(PARAM_ACTION, ACTION_CANCEL_UPLOAD)
     intent.putExtra(PARAM_UPLOAD_ID, uploadID)
-    val flag = if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) { PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_MUTABLE} else { PendingIntent.FLAG_UPDATE_CURRENT }
+    val flag = if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) { PendingIntent.FLAG_MUTABLE} else { PendingIntent.FLAG_UPDATE_CURRENT }
     return PendingIntent.getBroadcast(context, requestCode, intent, flag)
   }
 }
